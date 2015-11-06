@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_activated"
+    android:padding="6dp" >
+
+    <CheckBox
+        android:id="@+id/reminder_list_item_remindedCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:enabled="false"
+        android:focusable="false"
+        android:gravity="center"
+         android:button="@drawable/custom_checkbox_design"
+        android:padding="4dp" />
+
+    <TextView
+        android:id="@+id/reminder_list_item_titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/reminder_list_item_remindedCheckBox"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:text="ReminerTitle"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/reminder_list_item_dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_list_item_titleTextView"
+        android:layout_toLeftOf="@id/reminder_list_item_remindedCheckBox"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="4dp"
+        android:text="ReminderDate"
+        android:textSize="16sp" />
+
+</RelativeLayout>

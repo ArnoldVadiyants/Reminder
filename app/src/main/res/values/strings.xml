@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Reminder</string>
+    <string name="reminder_title_hint">Enter a title for the reminder.</string>
+    <string name="reminder_title_label">Title</string>
+    <string name="reminder_details_label">Details</string>
+    <string name="reminder_remind_label">REMIND</string>
+    <string name="reminders_title">Reminders</string>
+    <string name="date_time_picker_title">Date and time of remind:</string>
+    <string name="new_reminder">New Remind</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle">If you see something, say something.</string>
+    <string name="delete_reminder">Delete</string>
+    <string name="reply_reminder">Reply</string>
+    <string name="minutes">Minutes</string>
+    <string name="hours">Hours</string>
+    <string name="days">Days</string>
+    <string name="weeks">Weeks</string>
+    <string name="months">Months</string>
+    <string name="years">Years</string>
+    <string name="snooze_title">SNOOZE</string>
+    <string name="stop_title">STOP</string>
+    <string name="snooze_time">Set snooze time</string>
+    <string name="sort">Set sort</string>
+    <string name="sort_new_old">Newest first</string>
+    <string name="sort_old_new">Oldest first</string>
+    <string name="sort_asc">Asc.</string>
+    <string name="sort_desc">Desc.</string>
+    <string name="sort_A_Z">A-Z</string>
+    <string name="sort_Z_A">Z-A</string>
+    <string name="settings">Settings</string>
+    <string name="no_save_reminders">No saved reminders. Add reminder.</string>
+
+    <string-array name="flags_list">
+        <item>Once</item>
+        <item>Minutely</item>
+        <item>Hourly</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+        <item>Custom</item>
+        <!-- <item>other variant</item> -->
+    </string-array>
+     <string-array name="sort_list">
+        <item>None</item>
+        <item>Date</item>
+        <item>Name</item>
+        <!-- <item>other variant</item> -->
+    </string-array>
+
+</resources>

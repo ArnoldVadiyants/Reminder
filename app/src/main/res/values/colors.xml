@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+      <color name="background">#202020</color>
+      <color name="backgroundListView">#E8E8E8</color>
+</resources>

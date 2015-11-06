@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_item_new_remind"
+        android:icon="@android:drawable/ic_menu_add"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/new_reminder"/>
+  <!--  <item
+        android:id="@+id/menu_item_show_subtitle"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:showAsAction="ifRoom"
+        android:title="@string/show_subtitle"/>  --> 
+     <item
+        android:id="@+id/menu_item_settings"
+         android:title="@string/settings"/>
+    <!--      android:showAsAction="ifRoom"-->
+       
+
+</menu>

@@ -1,0 +1,125 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:2:1-67:12
+	package
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:5:5-30
+	android:versionCode
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:5:31-61
+uses-sdk
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:19.1.0] D:\Repository\Reminder\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\AndroidManifest.xml:18:5-42
+	android:targetSdkVersion
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:8:9-34
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:12:22-65
+application
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:14:5-65:19
+MERGED from [com.android.support:appcompat-v7:19.1.0] D:\Repository\Reminder\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\AndroidManifest.xml:19:5-20
+	android:label
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:17:9-41
+	android:allowBackup
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:15:9-35
+	android:icon
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:16:9-45
+	android:theme
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:18:9-40
+activity#com.example.reminder.ReminderListActivity
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:19:9-24:20
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:19:19-55
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:20:13-23:29
+action#android.intent.action.MAIN
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:22:27-74
+activity#com.example.reminder.ReminderPagerActivity
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:25:9-31:20
+	android:label
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:27:13-45
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:26:13-50
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:28:13-30:57
+	android:value
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:30:17-54
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:29:17-63
+activity#com.example.reminder.SettingsFragmentAcitivity
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:32:9-40:16
+	android:label
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:34:9-41
+	android:parentActivityName
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:35:9-59
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:33:9-50
+activity#com.example.reminder.ServiceDialog
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:41:9-48:16
+	android:label
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:45:13-45
+	android:excludeFromRecents
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:47:13-46
+	android:launchMode
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:44:13-44
+	android:finishOnTaskLaunch
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:43:13-46
+	android:theme
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:46:13-43
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:42:13-41
+service#com.example.reminder.ReminderService
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:50:9-52
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:50:18-49
+service#com.example.reminder.ReminderDialogService
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:51:9-53:38
+	android:enabled
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:53:13-35
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:52:13-50
+service#com.example.reminder.SnoozeService
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:54:9-56:38
+	android:enabled
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:56:13-35
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:55:13-42
+receiver#com.example.reminder.StartupReceiver
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:58:9-62:20
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:58:19-50
+intent-filter#android.intent.action.BOOT_COMPLETED
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:59:13-61:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:60:17-79
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:60:25-76
+receiver#com.example.reminder.SnoozeReceiver
+ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:63:9-64:20
+	android:name
+		ADDED from D:\Repository\Reminder\app\src\main\AndroidManifest.xml:63:19-49
