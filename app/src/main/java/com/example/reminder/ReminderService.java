@@ -127,7 +127,6 @@ public class ReminderService extends IntentService {
 	}
 
 	public static void setServiceAlarm(Context context, boolean isOn) {
-
 		Intent intent = new Intent(context, ReminderService.class);
 		PendingIntent pi = PendingIntent.getService(context, 0, intent,
 				0);
