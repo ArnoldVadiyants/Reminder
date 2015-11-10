@@ -48,12 +48,6 @@
              />
  <!--  android:theme="@android:style/Theme.Dialog"-->
         <service android:name=".ReminderService" />
-        <service
-            android:name=".ReminderDialogService"
-            android:enabled="true" />
-        <service
-            android:name=".SnoozeService"
-            android:enabled="true" />
 
         <receiver android:name=".StartupReceiver" >
             <intent-filter>

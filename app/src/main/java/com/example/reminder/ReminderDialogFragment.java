@@ -1,16 +1,11 @@
 package com.example.reminder;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.UUID;
-
 import android.app.Activity;
-import android.content.Context;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -18,11 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.UUID;
 
 public class ReminderDialogFragment extends Fragment {
 	private static final Uri ALARM_URI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
@@ -123,16 +120,7 @@ public class ReminderDialogFragment extends Fragment {
 	        					"snoozing after " + ReminderSettings.get(getActivity()).getSnoozeTime() + " minutes",
 	        					Toast.LENGTH_SHORT).show();
 					}
-					//
-					
-					// SnoozeReceiver.startAlarm(getActivity(),
-					// SnoozeReceiver.class);
-					/*
-					 * Intent i = new Intent(getActivity(),
-					 * SnoozeService.class);
-					 * i.putExtra(SnoozeService.EXTRA_REMINDER_ID, r.getId());
-					 * getActivity().startService(i);
-					 */
+
 				}
 				reminderLab.saveSnoozedID(snoozedIdList);
 				finishFragment();
@@ -173,25 +161,24 @@ public class ReminderDialogFragment extends Fragment {
 		  }
 		      return isCreated;
 	  }
-	/*
-	 * @SuppressWarnings("deprecation") private void startSnoozeService() { int
-	 * ONGOING_NOTIFICATION_ID = 0; // TODO Auto-generated method stub for
-	 * (Reminder r : doReminders) { r.setDoRemind(false);
-	 * 
-	 * 
-	 * 
-	 * 
-	 * Intent i = new Intent(getActivity(), SnoozeService.class);
-	 * i.putExtra(SnoozeService.EXTRA_REMINDER_ID, r.getId());
-	 * getActivity().startService(i); } }
-	 */
+
 	public static void dataChanged() {
 		doReminders = getDoReminders();
 		sActivity.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
 				sAdapter.clear();
-				sAdapter.addAll(doReminders);
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+					sAdapter.addAll(doReminders);
+				}
+				else
+				{
+					for(Reminder r : doReminders)
+					{
+						sAdapter.add(r);
+					}
+
+				}
 			}
 		});
 
