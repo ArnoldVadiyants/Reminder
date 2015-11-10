@@ -1,11 +1,5 @@
 package com.example.reminder;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.concurrent.TimeUnit;
-
 import android.app.AlarmManager;
 import android.app.IntentService;
 import android.app.Notification;
@@ -16,15 +10,18 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.concurrent.TimeUnit;
+
 public class ReminderService extends IntentService {
 	private static final String TAG = "ReminderService";
-	private static final int REMINDER_INTERVAL = 1000; // секунда
+	private static final int REMINDER_INTERVAL = 1000; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	public static final String PREF_IS_ALARM_ON = "isAlarmOn";
 
 	public ReminderService() {
@@ -87,7 +84,7 @@ public class ReminderService extends IntentService {
 			}
 		}
 	//	}
-		if (haveDoReminders == true) {
+		if (haveDoReminders) {
 			createDialog(intent);
 		}
 		
@@ -133,7 +130,7 @@ public class ReminderService extends IntentService {
 
 		Intent intent = new Intent(context, ReminderService.class);
 		PendingIntent pi = PendingIntent.getService(context, 0, intent,
-				IntentService.START_STICKY);
+				0);
 		AlarmManager alarmManager = (AlarmManager) context
 				.getSystemService(Context.ALARM_SERVICE);
 		if (isOn) {
@@ -181,11 +178,7 @@ public class ReminderService extends IntentService {
 				PendingIntent.FLAG_NO_CREATE);
 		return pi != null;
 
-		/*
-		 * use: boolean shouldStartAlarm =
-		 * !PollService.isServiceAlarmOn(getActivity());
-		 * PollService.setServiceAlarm(getActivity(), shouldStartAlarm);
-		 */
+
 	}
 	@Override
 	public void onDestroy() {
