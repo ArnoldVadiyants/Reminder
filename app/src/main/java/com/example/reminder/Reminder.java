@@ -12,7 +12,7 @@ import android.util.Log;
 
 public class Reminder {
 	
-	
+	public static final String EMPTY_TITLE = "No title";
 	private static final String TAG = "Reminder";
 	private static final String JSON_ID = "id";
 	private static final String JSON_TITLE = "title";
@@ -205,8 +205,8 @@ public class Reminder {
 		return mTitle;
 	}
 
-	public void setTitle(String Title) {
-		mTitle = Title;
+	public void setTitle(String title) {
+			mTitle = title;
 	}
 
 	public UUID getId() {

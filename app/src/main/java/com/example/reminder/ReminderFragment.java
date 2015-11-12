@@ -1,9 +1,5 @@
 package com.example.reminder;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.UUID;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -21,7 +17,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -31,6 +26,10 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 	
 public class ReminderFragment extends Fragment {
 	public static final String EXTRA_REMINDER_ID =
@@ -95,7 +94,9 @@ public class ReminderFragment extends Fragment {
 		}
 
 		mTitleField = (EditText) v.findViewById(R.id.reminder_title);
-		mTitleField.setText(mReminder.getTitle());
+		if(mReminder.getTitle().equals(Reminder.EMPTY_TITLE))
+			mTitleField.setText("");
+		else mTitleField.setText(mReminder.getTitle());
 		mTitleField.addTextChangedListener(new TextWatcher() {
 			public void onTextChanged(CharSequence c, int start, int before,
 					int count) {
