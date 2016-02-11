@@ -46,7 +46,7 @@ public class ReminderService extends IntentService {
 		/*
 		 * if (activeReminders.size() == 0) { return; }
 		 */
-		// activeReminders = new ReminderSorting().sortByDate(activeReminders);
+		// activeReminders = new DateSortComparator().sortByDate(activeReminders);
 		Date date = new Date();
 		Calendar calendar = GregorianCalendar.getInstance();
 		calendar.setTime(date);

@@ -1,7 +1,6 @@
 package com.example.reminder;
 
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;

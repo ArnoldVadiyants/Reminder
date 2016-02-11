@@ -1,12 +1,14 @@
 package com.example.reminder;
 
 import android.app.Activity;
+import android.content.Context;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager.WakeLock;
+import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,15 +33,17 @@ public class ReminderDialogFragment extends Fragment {
 	private static Activity sActivity;
 	public static boolean onPaused = false;
 	private WakeLock mWakeLock;
-	
+	private Vibrator mVibrator;
 	private Ringtone mRingtone;
-
+	private boolean hasVibrate;
+	private final long[] pattern = { 0, 500, 1000 };
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
 		sActivity = getActivity();
+		hasVibrate = false;
 		/*Window window = sActivity.getWindow();
 		sActivity.requestWindowFeature(Window.FEATURE_NO_TITLE);
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -49,8 +53,8 @@ public class ReminderDialogFragment extends Fragment {
 	            | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
 	            | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
 	            | WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON);*/
-		
 		mRingtone = RingtoneManager.getRingtone(sActivity, ALARM_URI);
+		mVibrator = (Vibrator)getActivity().getSystemService(Context.VIBRATOR_SERVICE);
 		playAlarmSound();
 	}
 
@@ -62,7 +66,7 @@ public class ReminderDialogFragment extends Fragment {
 		sDialogIsCreated = true;
 		Log.d(TAG, "onCreate");
 		doReminders = getDoReminders();
-		sAdapter = new ReminderAdapter(getActivity(), doReminders);
+		sAdapter = new ReminderAdapter(getActivity(), doReminders, true);
 		View view = getActivity().getLayoutInflater().inflate(
 				R.layout.dialog_reminder, null);
 		ListView reminderListView = (ListView) view
@@ -138,18 +142,29 @@ public class ReminderDialogFragment extends Fragment {
 	}
 	private void playAlarmSound()
 	{
-		
-		try {
-		     mRingtone.play();
-		} catch (Exception e) {
-		    e.printStackTrace();
-		}
+		hasVibrate = true;
+		mRingtone.play();
+		mVibrator.vibrate(pattern,0);
+	/*	new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while (hasVibrate)
+				{
+					mVibrator.vibrate(pattern,5);
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});*/
 	}
 	  private void stopPlaying() {
           if (mRingtone.isPlaying()) {
         	  mRingtone.stop();
-        	  
          }
+		  mVibrator.cancel();
       }
 	  public boolean isCreated()
 	  {

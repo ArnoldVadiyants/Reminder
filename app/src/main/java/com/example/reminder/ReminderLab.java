@@ -1,16 +1,17 @@
 package com.example.reminder;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.UUID;
+import android.content.Context;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
-import android.util.Log;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.UUID;
 
 public class ReminderLab {
 
@@ -48,6 +49,7 @@ public class ReminderLab {
 
 	public void addReminder(Reminder r) {
 		mReminders.add(r);
+		sortReminders();
 	}
 	public void deleteReminder(Reminder r) {
 		mReminders.remove(r);
@@ -57,9 +59,10 @@ public class ReminderLab {
 			new SnoozeReceiver().stopAlarm(mAppContext, SnoozeReceiver.class, (int)r.getId().getMostSignificantBits());
 			saveSnoozedID(snoozedIdList);
 			}
-		
+		sortReminders();
 		}
 	public ArrayList<Reminder> getReminders() {
+
 		return mReminders;
 	}
 
@@ -77,6 +80,7 @@ public class ReminderLab {
 	}
 	public boolean saveReminders() {
 		try {
+			sortReminders();
 		mSerializer.saveReminders(mReminders);
 		Log.d(TAG, "reminders saved to file");
 		return true;
@@ -85,6 +89,12 @@ public class ReminderLab {
 		return false;
 		}
 		}
+	public void sortReminders()
+	{
+		Collections.sort(mReminders, new DateSortComparator() {
+		});
+	}
+
 	public LinkedHashSet<UUID> getSnoozedIdList()
 	{
 		ReminderIntentJSONSerializer serializer = new ReminderIntentJSONSerializer(mAppContext, SNOOZED_FILENAME);

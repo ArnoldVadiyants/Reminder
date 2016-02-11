@@ -229,6 +229,7 @@ public class ReminderFragment extends Fragment {
 	public void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
+
 	
 	}
 

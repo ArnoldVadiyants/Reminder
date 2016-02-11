@@ -24,7 +24,7 @@ private ArrayList<Reminder> mReminders;
 		setContentView(mViewPager);
 		
 		mReminders = ReminderLab.get(this).getReminders();
-		
+
 		FragmentManager fm = getSupportFragmentManager();
 		setTitle(mReminders.get(0).getTitle());
 		mViewPager.setAdapter(new FragmentStatePagerAdapter(fm) {

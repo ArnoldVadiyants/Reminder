@@ -52,6 +52,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/reminder_remind_label"
-        android:button="@drawable/custom_checkbox_design" />
+        android:button="@null"
+        android:background="@null"
+        android:drawableLeft="@drawable/custom_checkbox_design"
+        android:gravity="center_vertical"/>
 	
 </LinearLayout>

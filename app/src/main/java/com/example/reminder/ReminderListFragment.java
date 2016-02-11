@@ -1,8 +1,5 @@
 package com.example.reminder;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
@@ -20,10 +17,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView.MultiChoiceModeListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ReminderListFragment extends ListFragment {
 	private static final String TAG = "ReminderListFragment";
@@ -36,7 +32,7 @@ public class ReminderListFragment extends ListFragment {
 		setHasOptionsMenu(true);
 		getActivity().setTitle(R.string.reminders_title);
 		mReminders = ReminderLab.get(getActivity()).getReminders();
-		ReminderAdapter adapter = new ReminderAdapter(getActivity(),mReminders);
+		ReminderAdapter adapter = new ReminderAdapter(getActivity(),mReminders, false);
 		setListAdapter(adapter);
 		setRetainInstance(true);
 		mSubtitleVisible = false;
@@ -63,10 +59,10 @@ public class ReminderListFragment extends ListFragment {
 		
 		
 		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-			// Контекстные меню для Froyo и Gingerbread
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ Froyo пїЅ Gingerbread
 			registerForContextMenu(listView);
 			} else {
-			// Контекстная панель действий для Honeycomb и выше
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ Honeycomb пїЅ пїЅпїЅпїЅпїЅ
 			listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
 			listView.setMultiChoiceModeListener(new MultiChoiceModeListener() {
 				
@@ -201,7 +197,8 @@ public void setEmptyText(CharSequence text) {
 		// TODO Auto-generated method stub
 		super.onResume();
 		Log.d(TAG, "onResume");
-		((ReminderAdapter)getListAdapter()).notifyDataSetChanged();
+		ReminderLab.get(getActivity()).sortReminders();
+				((ReminderAdapter) getListAdapter()).notifyDataSetChanged();
 	}
 	@Override
 	public void onPause() {

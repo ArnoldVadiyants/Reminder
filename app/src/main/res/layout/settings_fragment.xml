@@ -34,27 +34,6 @@
             android:gravity="center_vertical|start"
             android:max="59" />
 
-        <TextView
-            style="?android:listSeparatorTextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sort" />
-
-        <Button
-            android:id="@+id/sortButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-
-        <ToggleButton
-            android:id="@+id/sortToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center_vertical|start"
-            android:text="ToggleButton" />
     </LinearLayout>
 
 </ScrollView>

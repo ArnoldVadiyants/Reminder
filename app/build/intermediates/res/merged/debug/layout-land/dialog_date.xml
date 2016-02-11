@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialog_date_time_layout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal" >
-
-    <DatePicker
-        android:id="@+id/dialog_date_datePicker"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView3">
+    <LinearLayout
+        android:id="@+id/dialog_date_time_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:calendarViewShown="false" 
-        android:layout_weight="1">
-    </DatePicker>
+        android:orientation="vertical"
+        android:measureWithLargestChild="false"
+        android:gravity="center">
 
-    <TimePicker
-        android:id="@+id/dialog_time_timePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-          android:layout_weight="1"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
-</LinearLayout>
+            <DatePicker
+                android:id="@+id/dialog_date_datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false" >
+            </DatePicker>
+
+            <TimePicker
+                android:id="@+id/dialog_time_timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok"
+            android:id="@+id/dialog_date_okButton"
+            android:layout_gravity="center_horizontal"
+         />
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
 <!-- From: file:/D:/Repository/Reminder/app/src/main/res/layout-land/dialog_date.xml -->
